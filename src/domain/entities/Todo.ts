@@ -5,7 +5,7 @@ export default class Todo extends BaseEntity {
   title: string;
   completed: boolean;
 
-  constructor(userId: number, title: string, completed: boolean) {
+  constructor(userId: number, title: string, completed = false) {
     super();
     this.userId = userId;
     this.title = title;
