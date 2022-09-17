@@ -8,6 +8,6 @@ export default class BaseEntity implements UID {
   }
 
   generateId = (): number => {
-    return Math.floor(Math.random() * 1000000);
+    return Math.floor(Math.random() * 10000000);
   };
 }
