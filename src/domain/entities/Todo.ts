@@ -1,14 +1,15 @@
-import BaseEntity from './BaseEntity';
+import TodoProps from '../interfaces/Todo';
 
-export default class Todo extends BaseEntity {
+export default class Todo {
+  id: number;
   userId: number;
   title: string;
   completed: boolean;
 
-  constructor(userId: number, title: string, completed = false) {
-    super();
-    this.userId = userId;
-    this.title = title;
-    this.completed = completed;
+  constructor(props: TodoProps) {
+    this.id = props.id;
+    this.userId = props.userId;
+    this.title = props.title;
+    this.completed = props.completed;
   }
 }
