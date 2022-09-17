@@ -1,5 +1,5 @@
 import Todo from '../domain/entities/Todo';
-import TodoRepository from './interfaces/TodoRepository';
+import { TodoRepository } from './interfaces/TodoRepository';
 
 export const getTodoList = async (repository: TodoRepository) => {
   let todos = await repository.getTodoList();
@@ -11,8 +11,11 @@ export const getTodoById = async (repository: TodoRepository, id: number) => {
   return todo;
 };
 
-export const addTodo = async (repository: TodoRepository, title: string) => {
-  let todo = await repository.addTodo(title);
+export const addTodo = async (
+  repository: TodoRepository,
+  props: TodoRepository.AddTodoRequest
+) => {
+  let todo = await repository.addTodo(props);
   return todo;
 };
 
