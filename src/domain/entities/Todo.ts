@@ -12,4 +12,11 @@ export default class Todo {
     this.title = props.title;
     this.completed = props.completed;
   }
+
+  toObject = (): TodoProps => ({
+    id: this.id,
+    userId: this.userId,
+    title: this.title,
+    completed: this.completed,
+  });
 }
