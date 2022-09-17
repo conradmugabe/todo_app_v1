@@ -1,12 +1,11 @@
-import Todo from '../../domain/entities/Todo';
 import TodoProps from '../../domain/interfaces/Todo';
 
 export interface TodoRepository {
-  getTodoList(): Promise<Todo[]>;
-  getTodoById(id: number): Promise<Todo>;
-  addTodo(props: TodoRepository.AddTodoRequest): Promise<Todo>;
+  getTodoList(): Promise<TodoProps[]>;
+  getTodoById(id: number): Promise<TodoProps>;
+  addTodo(props: TodoRepository.AddTodoRequest): Promise<TodoProps>;
   deleteTodo(id: number): Promise<void>;
-  updateTodo(todo: Todo): Promise<Todo>;
+  updateTodo(todo: TodoProps): Promise<TodoProps>;
 }
 
 export namespace TodoRepository {
