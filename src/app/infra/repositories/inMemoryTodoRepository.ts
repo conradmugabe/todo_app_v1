@@ -6,7 +6,7 @@ import TodoNotFound from '../errors/TodoNotFound';
 export default class InMemoryTodoRepository implements TodoRepository {
   private initialTodos: TodoProps[];
 
-  constructor(initialTodos: TodoProps[]) {
+  constructor(initialTodos: TodoProps[] = []) {
     this.initialTodos = initialTodos;
   }
 
