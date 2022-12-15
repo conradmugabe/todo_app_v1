@@ -3,9 +3,14 @@
 		"browser": true,
 		"es2021": true
 	},
-	"extends": ["plugin:react/recommended", "airbnb", "airbnb-typescript", "prettier"],
+	"extends": [
+		"plugin:react/recommended",
+		"airbnb",
+		"airbnb-typescript",
+		"prettier"
+	],
 	"parserOptions": {
-        "project": "./tsconfig.json",
+		"project": "./tsconfig.json",
 		"ecmaFeatures": {
 			"jsx": true
 		},
