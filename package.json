@@ -9,7 +9,8 @@
 		"preview": "vite preview",
 		"prepare": "husky install",
 		"format": "prettier . --write",
-		"lint": "eslint \"./src/**/*.{js,jsx,ts,tsx,json}\" --fix --max-warnings=0"
+		"lint": "eslint \"./src/**/*.{js,jsx,ts,tsx,json}\" --fix --max-warnings=0",
+		"tsc:check": "tsc --noEmit"
 	},
 	"dependencies": {
 		"bootstrap": "^5.2.3",
