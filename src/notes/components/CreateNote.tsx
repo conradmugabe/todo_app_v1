@@ -1,12 +1,13 @@
 import React, { useRef } from 'react';
 import { Button, Heading, Input, Textarea } from '@chakra-ui/react';
-import { NoteData } from '../interfaces/Notes';
+import { NoteData } from '../entity/Notes';
 
 type Props = {
 	onSubmit: (data: NoteData) => Promise<void>;
+	onBack: () => Promise<void>;
 };
 
-function CreateNote({ onSubmit }: Props) {
+function CreateNote({ onSubmit, onBack }: Props) {
 	const title = useRef<HTMLInputElement>(null);
 	const body = useRef<HTMLTextAreaElement>(null);
 
@@ -16,7 +17,7 @@ function CreateNote({ onSubmit }: Props) {
 			try {
 				await onSubmit({
 					title: title.current.value,
-					body: title.current.value,
+					body: body.current.value,
 				});
 				title.current.value = '';
 				body.current.value = '';
@@ -24,6 +25,10 @@ function CreateNote({ onSubmit }: Props) {
 				// no-op
 			}
 		}
+	};
+
+	const handleBack = async () => {
+		await onBack();
 	};
 
 	return (
@@ -34,7 +39,7 @@ function CreateNote({ onSubmit }: Props) {
 			<Button data-testid="submit" type="submit">
 				Save
 			</Button>
-			<Button data-testid="back" type="button">
+			<Button data-testid="back" type="button" onClick={handleBack}>
 				Back
 			</Button>
 		</form>
