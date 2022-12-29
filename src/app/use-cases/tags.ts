@@ -2,7 +2,7 @@ import { AddTagProps } from '../core/dto/tag.dto';
 import { Tag } from '../core/entities/tag';
 import TagsDatabaseService from '../core/services/tagsDatabase.service';
 
-export default class TagsUseCase {
+export default class TagsUseCases {
 	constructor(private databaseService: TagsDatabaseService) {}
 
 	addTag = async ({ label }: AddTagProps): Promise<Tag> =>
