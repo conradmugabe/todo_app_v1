@@ -9,6 +9,8 @@ export type Note = {
 
 // This is a concept I want to checkout later (CLEAN ARCHITECTURE)
 
+// type SerializeNote = Note;
+
 // export class NoteEntity {
 // 	private readonly _id: string;
 
@@ -32,5 +34,9 @@ export type Note = {
 
 // 	get body() {
 // 		return this._body;
+// 	}
+
+// 	static serialize(note: NoteEntity): SerializeNote {
+// 		return { id: note.id, title: note.title, body: note.body };
 // 	}
 // }

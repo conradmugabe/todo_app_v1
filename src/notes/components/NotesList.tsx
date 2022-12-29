@@ -31,7 +31,7 @@ function NotesList({ notes }: Props) {
 			<>
 				{NotesListHeader}
 				{notes.map(({ id, title, body }) => (
-					<Card key={id}>
+					<Card key={id} as={Link} to={`/${id}`}>
 						<CardHeader>
 							<Heading size="md">{title}</Heading>
 						</CardHeader>
