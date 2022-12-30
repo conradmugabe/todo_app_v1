@@ -1,4 +1,4 @@
-import { Note } from '../../../src/notes/entity/Notes';
+import { Note } from '../../../src/app/core/entities/note';
 import LocalStorageDatabaseService from '../../../src/notes/services/localStorageDatabase';
 
 const mockData: Note = { id: '123', title: 'test title', body: 'test body' };
