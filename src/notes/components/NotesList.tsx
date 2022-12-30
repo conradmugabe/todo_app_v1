@@ -10,6 +10,8 @@ import {
 	Grid,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import { FcAnswers } from 'react-icons/fc';
+import { MdAdd } from 'react-icons/md';
 import { Note } from '../entity/Notes';
 
 type Props = {
@@ -18,9 +20,15 @@ type Props = {
 
 function NotesList({ notes }: Props) {
 	const NotesListHeader = (
-		<Flex>
+		<Flex marginY={5}>
 			<Heading>Notes</Heading>
-			<Button as={Link} to="/new" marginLeft="auto">
+			<Button
+				as={Link}
+				to="/new"
+				marginLeft="auto"
+				colorScheme="green"
+				leftIcon={<MdAdd size="24" />}
+			>
 				Create Note
 			</Button>
 		</Flex>
@@ -49,7 +57,10 @@ function NotesList({ notes }: Props) {
 		<>
 			{NotesListHeader}
 			<Grid placeItems="center" height="90vh">
-				<Text>no notes found</Text>
+				<Flex direction="column" alignItems="center">
+					<FcAnswers size="120" />
+					<Text>No Notes Found</Text>
+				</Flex>
 			</Grid>
 		</>
 	);
