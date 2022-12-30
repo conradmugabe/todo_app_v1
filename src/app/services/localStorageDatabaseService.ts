@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import { NoteData } from '../core/dto/note.dto';
 import { AddTagProps } from '../core/dto/tag.dto';
 import { Note } from '../core/entities/note';
@@ -39,7 +40,7 @@ export default class LocalStorageDatabaseService
 	};
 
 	addTag = async ({ label }: AddTagProps): Promise<Tag> => {
-		const tag: Tag = { id: crypto.randomUUID(), label };
+		const tag: Tag = { id: uuid(), label };
 		const tags = await this.getTags();
 		tags.push(tag);
 		LocalStorageDatabaseService.saveItem({
@@ -66,7 +67,7 @@ export default class LocalStorageDatabaseService
 	};
 
 	addNote = async ({ title, body }: NoteData): Promise<Note> => {
-		const note: Note = { id: crypto.randomUUID(), title, body };
+		const note: Note = { id: uuid(), title, body };
 		const notes = await this.getAllNotes();
 		notes.push(note);
 		LocalStorageDatabaseService.saveItem({
