@@ -1,11 +1,15 @@
+import { NoteData } from '../core/dto/note.dto';
 import { AddTagProps } from '../core/dto/tag.dto';
+import { Note } from '../core/entities/note';
 import { Tag } from '../core/entities/tag';
+import NotesDatabaseService from '../core/services/notesDatabase.service';
 import TagsDatabaseService from '../core/services/tagsDatabase.service';
 
 export default class LocalStorageDatabaseService
-	implements TagsDatabaseService
+	implements TagsDatabaseService, NotesDatabaseService
 {
-	private notesDatabaseName = 'notes-app:tags';
+	private tagsDatabaseName = 'notes-app:tags';
+	private notesDatabaseName = 'notes-app:notes';
 
 	static getItem = <T>({
 		key,
@@ -21,7 +25,7 @@ export default class LocalStorageDatabaseService
 
 	getTags = (): Promise<Tag[]> => {
 		const tags = LocalStorageDatabaseService.getItem<Tag[]>({
-			key: this.notesDatabaseName,
+			key: this.tagsDatabaseName,
 		});
 		if (!tags)
 			return new Promise((resolve) => {
@@ -38,12 +42,32 @@ export default class LocalStorageDatabaseService
 		const tags = await this.getTags();
 		tags.push(tag);
 		LocalStorageDatabaseService.saveItem({
-			key: this.notesDatabaseName,
+			key: this.tagsDatabaseName,
 			value: tags,
 		});
 		return new Promise((resolve) => {
 			resolve(tag);
 		});
+	};
+
+	getAllNotes = async (): Promise<Note[]> => {
+		const notes = LocalStorageDatabaseService.getItem<Note[]>({
+			key: this.notesDatabaseName,
+		});
+		if (!notes) return new Promise((resolve) => resolve([]));
+		Note.array().parse(notes);
+		return new Promise((resolve) => resolve(notes));
+	};
+
+	addNote = async ({ title, body }: NoteData): Promise<Note> => {
+		const note: Note = { id: crypto.randomUUID(), title, body };
+		const notes = await this.getAllNotes();
+		notes.push(note);
+		LocalStorageDatabaseService.saveItem({
+			key: this.notesDatabaseName,
+			value: notes,
+		});
+		return new Promise((resolve) => resolve(note));
 	};
 }
 
