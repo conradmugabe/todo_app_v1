@@ -9,6 +9,7 @@ export default class LocalStorageDatabaseService
 	implements TagsDatabaseService, NotesDatabaseService
 {
 	private tagsDatabaseName = 'notes-app:tags';
+
 	private notesDatabaseName = 'notes-app:notes';
 
 	static getItem = <T>({
@@ -54,9 +55,14 @@ export default class LocalStorageDatabaseService
 		const notes = LocalStorageDatabaseService.getItem<Note[]>({
 			key: this.notesDatabaseName,
 		});
-		if (!notes) return new Promise((resolve) => resolve([]));
+		if (!notes)
+			return new Promise((resolve) => {
+				resolve([]);
+			});
 		Note.array().parse(notes);
-		return new Promise((resolve) => resolve(notes));
+		return new Promise((resolve) => {
+			resolve(notes);
+		});
 	};
 
 	addNote = async ({ title, body }: NoteData): Promise<Note> => {
@@ -67,7 +73,9 @@ export default class LocalStorageDatabaseService
 			key: this.notesDatabaseName,
 			value: notes,
 		});
-		return new Promise((resolve) => resolve(note));
+		return new Promise((resolve) => {
+			resolve(note);
+		});
 	};
 }
 
