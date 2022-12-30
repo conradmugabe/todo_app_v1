@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
-import { Note, NoteData } from '../entity/Notes';
-import LocalStorageDatabaseService from '../services/localStorageDatabase';
+import { NoteData } from '../../app/core/dto/note.dto';
+import { Note } from '../../app/core/entities/note';
+import LocalStorageDatabaseService from '../../app/services/localStorageDatabaseService';
 
 const localStorageDatabase = new LocalStorageDatabaseService();
 
