@@ -1,48 +1,22 @@
-import React, { useRef } from 'react';
-import { Button, Heading, Input, Textarea } from '@chakra-ui/react';
-import { NoteData } from '../entity/Notes';
+import React from 'react';
+import { Heading } from '@chakra-ui/react';
+import { NoteData } from '../../app/core/dto/note.dto';
+import NoteForm from './NoteForm';
+import useNotesUseCases from '../useCases/useNotesUseCases';
 
-type Props = {
-	onSubmit: (data: NoteData) => Promise<void>;
-	onBack: () => Promise<void>;
-};
+function CreateNote() {
+	const { useCreateNote } = useNotesUseCases();
+	const { isLoading, mutate } = useCreateNote();
 
-function CreateNote({ onSubmit, onBack }: Props) {
-	const title = useRef<HTMLInputElement>(null);
-	const body = useRef<HTMLTextAreaElement>(null);
-
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		if (title.current?.value && body.current?.value) {
-			try {
-				await onSubmit({
-					title: title.current.value,
-					body: body.current.value,
-				});
-				title.current.value = '';
-				body.current.value = '';
-			} catch (error) {
-				// no-op
-			}
-		}
-	};
-
-	const handleBack = async () => {
-		await onBack();
+	const onSubmit = async ({ title, body }: NoteData): Promise<void> => {
+		mutate({ title, body });
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<Heading>Create Note</Heading>
-			<Input ref={title} data-testid="title" type="text" required />
-			<Textarea ref={body} data-testid="body" required />
-			<Button data-testid="submit" type="submit">
-				Save
-			</Button>
-			<Button data-testid="back" type="button" onClick={handleBack}>
-				Back
-			</Button>
-		</form>
+		<>
+			<Heading marginY={5}>Create Note</Heading>
+			<NoteForm onSubmit={onSubmit} isLoading={isLoading} />
+		</>
 	);
 }
 
