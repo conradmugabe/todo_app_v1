@@ -1,18 +1,21 @@
 import React from 'react';
 import { Heading } from '@chakra-ui/react';
-import { NoteData } from '../entity/Notes';
+import { NoteData } from '../../app/core/dto/note.dto';
 import NoteForm from './NoteForm';
+import useNotesUseCases from '../useCases/useNotesUseCases';
 
-type Props = {
-	onSubmit: (data: NoteData) => Promise<void>;
-	onBack: () => Promise<void>;
-};
+function CreateNote() {
+	const { useCreateNote } = useNotesUseCases();
+	const { isLoading, mutate } = useCreateNote();
 
-function CreateNote({ onSubmit, onBack }: Props) {
+	const onSubmit = async ({ title, body }: NoteData): Promise<void> => {
+		mutate({ title, body });
+	};
+
 	return (
 		<>
 			<Heading marginY={5}>Create Note</Heading>
-			<NoteForm onSubmit={onSubmit} onBack={onBack} />
+			<NoteForm onSubmit={onSubmit} isLoading={isLoading} />
 		</>
 	);
 }

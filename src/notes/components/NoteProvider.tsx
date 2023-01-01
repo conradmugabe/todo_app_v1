@@ -1,20 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Navigate, Outlet, useParams } from 'react-router-dom';
-import { Note } from '../entity/Notes';
+import useNotesUseCases from '../useCases/useNotesUseCases';
 
-type Props = {
-	getNoteById: (id: string) => Promise<Note | undefined>;
-};
-
-function NoteProvider({ getNoteById }: Props) {
+function NoteProvider() {
 	const { noteId } = useParams();
-	let note: Note | undefined;
+	const { useGetNoteById } = useNotesUseCases();
+	const { isLoading, data: note } = useGetNoteById(noteId || '');
 
-	useEffect(() => {
-		getNoteById(noteId || '').then((data) => {
-			note = data;
-		});
-	}, [noteId]);
+	if (isLoading) return <p>Loading...</p>;
 
 	return note ? <Outlet context={note} /> : <Navigate to="/" replace />;
 }
