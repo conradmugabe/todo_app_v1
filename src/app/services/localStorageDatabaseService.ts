@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { NoteData } from '../core/dto/note.dto';
+import { EditNoteData, NoteData } from '../core/dto/note.dto';
 import { AddTagProps } from '../core/dto/tag.dto';
 import { Note } from '../core/entities/note';
 import { Tag } from '../core/entities/tag';
@@ -77,6 +77,27 @@ export default class LocalStorageDatabaseService
 		return new Promise((resolve) => {
 			resolve(note);
 		});
+	};
+
+	getNoteById = async (noteId: string): Promise<Note | undefined> => {
+		const notes = await this.getAllNotes();
+		return notes.find((n) => n.id === noteId);
+	};
+
+	editNote = async ({
+		id,
+		title,
+		body,
+	}: EditNoteData): Promise<Note | undefined> => {
+		const notes = await this.getAllNotes();
+		const index = notes.findIndex((n) => n.id === id);
+		if (index === -1) return undefined;
+		notes[index] = { ...notes[index], title, body };
+		LocalStorageDatabaseService.saveItem({
+			key: this.notesDatabaseName,
+			value: notes,
+		});
+		return notes[index];
 	};
 }
 
