@@ -14,34 +14,26 @@ function NotesList() {
 
 	if (isError) return <p>An error occurred</p>;
 
-	const NotesListHeader = (
-		<Flex marginY={5}>
-			<Heading>Notes</Heading>
-			<Button
-				as={Link}
-				to="/new"
-				size="sm"
-				marginLeft="auto"
-				colorScheme="green"
-				leftIcon={<MdAdd size="24" />}
-			>
-				Create Note
-			</Button>
-		</Flex>
-	);
-
-	if (notes?.length === 0)
-		return (
-			<>
-				{NotesListHeader}
-				<EmptyNotes />
-			</>
-		);
-
 	return (
 		<>
-			{NotesListHeader}
-			<RenderNotesList notes={notes || []} />
+			<Flex marginY={5}>
+				<Heading>Notes</Heading>
+				<Button
+					as={Link}
+					to="/new"
+					size="sm"
+					marginLeft="auto"
+					colorScheme="green"
+					leftIcon={<MdAdd size="24" />}
+				>
+					Create Note
+				</Button>
+			</Flex>
+			{notes?.length === 0 ? (
+				<EmptyNotes />
+			) : (
+				<RenderNotesList notes={notes || []} />
+			)}
 		</>
 	);
 }
