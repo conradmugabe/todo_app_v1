@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, createContext, useContext } from 'react';
 import NotesUseCases from '../../app/use-cases/notes';
 
 export type UseCases = {
@@ -12,12 +12,12 @@ type Props = {
 	useCases: UseCases;
 };
 
-const UseCasesContext = React.createContext<UseCasesContextProps | undefined>(
+const UseCasesContext = createContext<UseCasesContextProps | undefined>(
 	undefined
 );
 
 const useUseCases = () => {
-	const context = React.useContext(UseCasesContext);
+	const context = useContext(UseCasesContext);
 	if (!context) {
 		throw Error('useUseCases must be used inside UseCasesContextProvider');
 	}
