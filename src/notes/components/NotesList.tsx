@@ -8,34 +8,35 @@ import EmptyNotes from './EmptyNotes';
 
 function NotesList() {
 	const { useGetNotes } = useNotesUseCases();
-	const { data: notes, isLoading, isError } = useGetNotes();
+	const { data: notes, isError } = useGetNotes();
 
-	if (isLoading) return <p>Loading...</p>;
+	if (notes)
+		return (
+			<>
+				<Flex marginY={5}>
+					<Heading>Notes</Heading>
+					<Button
+						as={Link}
+						to="/new"
+						size="sm"
+						marginLeft="auto"
+						colorScheme="green"
+						leftIcon={<MdAdd size="24" />}
+					>
+						Create Note
+					</Button>
+				</Flex>
+				{notes?.length === 0 ? (
+					<EmptyNotes />
+				) : (
+					<RenderNotesList notes={notes || []} />
+				)}
+			</>
+		);
 
 	if (isError) return <p>An error occurred</p>;
 
-	return (
-		<>
-			<Flex marginY={5}>
-				<Heading>Notes</Heading>
-				<Button
-					as={Link}
-					to="/new"
-					size="sm"
-					marginLeft="auto"
-					colorScheme="green"
-					leftIcon={<MdAdd size="24" />}
-				>
-					Create Note
-				</Button>
-			</Flex>
-			{notes?.length === 0 ? (
-				<EmptyNotes />
-			) : (
-				<RenderNotesList notes={notes || []} />
-			)}
-		</>
-	);
+	return <p>Loading...</p>;
 }
 
 export default NotesList;
