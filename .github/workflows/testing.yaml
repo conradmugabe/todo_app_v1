@@ -28,5 +28,8 @@ jobs:
           npm run lint
           npm run tsc:check
 
+      - name: Checking app build 🚧👷🏾‍♀️🧱🏗️
+        run: npm run build
+
       - name: Run Tests 🥼🧪
         run: npm run test
