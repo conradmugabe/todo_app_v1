@@ -16,7 +16,7 @@ type Props = {
 
 function RenderNotesList({ notes }: Props) {
 	return (
-		<SimpleGrid columns={2} gap={5}>
+		<SimpleGrid columns={{ base: 1, md: 2 }} gap={5}>
 			{notes.map(({ id, title, body }) => (
 				<Card key={id} as={Link} to={`/${id}`}>
 					<CardHeader>
