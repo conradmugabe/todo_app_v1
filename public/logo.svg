@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 430 430" style="enable-background:new 0 0 430 430;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#3A3347;}
+	.st1{display:none;}
+	.st2{display:inline;fill:none;stroke:#7166ee;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;}
+	.st3{display:none;fill:none;stroke:#7166ee;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:#7166ee;}
+	.st5{opacity:0.5;}
+	.st6{fill:#4BB3FD;}
+	.st7{fill:#7166ee;}
+	.st8{fill:#181730;}
+	.st9{fill:#F9C9C0;}
+	.st10{opacity:0.4;}
+	.st11{fill:#e8e230;}
+	.st12{fill:#A3A2A2;}
+	.st13{fill:#FFC738;}
+	.st14{fill:#2CA58D;}
+	.st15{opacity:0.6;}
+	.st16{fill:#F28BA8;}
+	.st17{fill:#08A88A;}
+	.st18{fill:#B26836;}
+	.st19{fill:#92140C;}
+	.st20{fill:#F24C00;}
+	.st21{fill:none;stroke:#F9C9C0;stroke-width:12;stroke-linecap:square;stroke-linejoin:round;}
+	.st22{opacity:0.3;}
+	.st23{opacity:0.85;}
+	.st24{fill:#FFFFFF;}
+	.st25{fill:none;stroke:#7166ee;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st26{opacity:0.8;}
+</style>
+<g>
+	<g>
+		<path class="st4" d="M276.16,361.77H68.23V68.22h145.25c0.97,0,1.91,0.39,2.59,1.07l59.01,59.01c0.69,0.69,1.07,1.62,1.07,2.59
+			V361.77z"/>
+	</g>
+	<g class="st5">
+		<polygon class="st4" points="276.16,129.38 215,129.38 215,68.22 		"/>
+	</g>
+</g>
+<g class="st5">
+	<g>
+		<rect x="68.22" y="68.23" class="st4" width="22.92" height="293.55"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path class="st7" d="M276.16,365.27H68.23c-1.93,0-3.5-1.57-3.5-3.5V68.22c0-1.93,1.57-3.5,3.5-3.5h145.25
+			c1.92,0,3.72,0.75,5.07,2.1l59.01,59.01c1.35,1.35,2.1,3.15,2.1,5.07v230.87C279.66,363.7,278.09,365.27,276.16,365.27z
+			 M71.73,358.27h200.93V130.9c0-0.04-0.02-0.09-0.05-0.12L213.6,71.77c-0.03-0.03-0.07-0.05-0.12-0.05H71.73V358.27z"/>
+	</g>
+	<g>
+		<path class="st7" d="M276.16,132.88H215c-1.93,0-3.5-1.57-3.5-3.5V68.22c0-1.42,0.85-2.69,2.16-3.23
+			c1.31-0.54,2.81-0.24,3.81,0.76l61.16,61.16c1,1,1.3,2.51,0.76,3.81C278.85,132.03,277.57,132.88,276.16,132.88z M218.5,125.88
+			h49.21L218.5,76.67V125.88z"/>
+	</g>
+</g>
+<g>
+	<polygon class="st11" points="356.29,148.76 215.17,289.88 192.67,292.04 193.91,268.62 193.93,268.64 335.05,127.52 	"/>
+</g>
+<g class="st5">
+	<polygon class="st11" points="212.76,280.13 212.76,280.13 350.17,142.64 356.29,148.76 215.17,289.88 215.17,289.88 
+		192.67,292.04 193.19,282.19 	"/>
+</g>
+<g>
+	<path class="st7" d="M192.67,295.54c-0.9,0-1.77-0.35-2.42-0.97c-0.74-0.7-1.13-1.69-1.07-2.71l1.24-23.42
+		c0.05-1.03,0.56-1.97,1.35-2.58l140.81-140.81c1.37-1.37,3.58-1.37,4.95,0l21.24,21.24c1.37,1.37,1.37,3.58,0,4.95L217.65,292.35
+		c-0.57,0.57-1.33,0.93-2.14,1.01l-22.5,2.16C192.89,295.53,192.78,295.54,192.67,295.54z M197.33,270.19l-0.95,17.98l17.2-1.65
+		l137.76-137.76l-16.29-16.29L197.33,270.19z"/>
+</g>
+<g>
+	<path class="st8" d="M351.11,150.29l-17.84-17.84l1.15-1.08l1.24,1.11l8.71-8.71c1.94-1.94,5.09-1.94,7.03,0l7.98,7.98
+		c1.94,1.94,1.94,5.09,0,7.03l-8.58,8.58l1.13,1.69l-0.55,0.98L351.11,150.29z"/>
+	<path class="st7" d="M351.11,150.99l-18.55-18.56l1.85-1.75l1.23,1.1l8.38-8.38c2.13-2.13,5.6-2.13,7.74,0l7.98,7.98
+		c1.03,1.03,1.6,2.41,1.6,3.87s-0.57,2.84-1.6,3.87l-8.29,8.29l1.08,1.6l-0.79,1.35L351.11,150.99z M334,132.46l17.08,17.08
+		l0.27-0.48l-1.19-1.77l8.87-8.87c0.84-0.84,1.31-1.97,1.31-3.16s-0.47-2.32-1.31-3.16l-7.98-7.98c-1.74-1.74-4.58-1.74-6.32,0
+		l-9.04,9.04l-1.25-1.12L334,132.46z"/>
+</g>
+</svg>
