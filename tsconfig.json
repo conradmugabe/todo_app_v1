@@ -18,7 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "@ui/*": ["src/UI/*"],
-      "@entities/*": ["src/app/entities/*"]
+      "@entities/*": ["src/app/entities/*"],
+      "@services/*": ["src/app/services/*"]
     }
   },
   "include": ["src", "tests"],
