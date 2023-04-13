@@ -31,6 +31,10 @@ jobs:
         id: linter
         run: npm run lint:check
 
+      - name: Running tests 🧪🥼🧑🏾‍🔬
+        id: test-runner
+        run: npm run test
+
       - name: Checking Project Build 🧱🚧👷🏾‍♀️🏗️
         id: builder
         run: npm run build
