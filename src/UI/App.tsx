@@ -1,3 +1,5 @@
+import Tasks from "@ui/pages/TasksPage";
+
 export default function App() {
-  return <h1>Hello from Notes!</h1>;
+  return <Tasks />;
 }
