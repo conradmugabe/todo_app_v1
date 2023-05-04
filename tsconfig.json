@@ -18,8 +18,12 @@
     "baseUrl": ".",
     "paths": {
       "@ui/*": ["src/UI/*"],
-      "@entities/*": ["src/app/entities/*"],
-      "@services/*": ["src/app/services/*"]
+      "@components/*": ["src/UI/components/*"],
+      "@forms/*": ["src/UI/forms/*"],
+      "@pages/*": ["src/UI/pages/*"],
+      "@tasks/*": ["src/app/tasks/*"],
+      "@web/*": ["src/app/web/*"],
+      "@utils/*": ["src/app/web/*"]
     }
   },
   "include": ["src", "tests"],

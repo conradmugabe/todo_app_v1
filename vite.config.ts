@@ -17,9 +17,13 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@ui": path.resolve(__dirname, "./src/UI"),
-      "@entities": path.resolve(__dirname, "src/app/entities"),
-      "@services": path.resolve(__dirname, "src/app/services"),
+      "@ui": path.resolve(__dirname, "src/UI"),
+      "@utils": path.resolve(__dirname, "src/app/web"),
+      "@tasks": path.resolve(__dirname, "src/app/tasks"),
+      "@web": path.resolve(__dirname, "src/app/web"),
+      "@pages": path.resolve(__dirname, "src/UI/pages"),
+      "@forms": path.resolve(__dirname, "src/UI/forms"),
+      "@components": path.resolve(__dirname, "src/UI/components"),
     },
   },
 });
