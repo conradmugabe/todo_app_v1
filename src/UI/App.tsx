@@ -1,5 +1,5 @@
-import Tasks from "@ui/pages/TasksPage";
+import ProjectsPage from "./pages/ProjectsPage";
 
 export default function App() {
-  return <Tasks />;
+  return <ProjectsPage />;
 }

@@ -17,10 +17,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      "@data": path.resolve(__dirname, "src/data"),
       "@ui": path.resolve(__dirname, "src/UI"),
       "@utils": path.resolve(__dirname, "src/app/web"),
       "@tasks": path.resolve(__dirname, "src/app/tasks"),
       "@comments": path.resolve(__dirname, "src/app/comments"),
+      "@projects": path.resolve(__dirname, "src/app/projects"),
       "@web": path.resolve(__dirname, "src/app/web"),
       "@pages": path.resolve(__dirname, "src/UI/pages"),
       "@forms": path.resolve(__dirname, "src/UI/forms"),
