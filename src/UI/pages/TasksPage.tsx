@@ -26,7 +26,7 @@ export default function TasksPage() {
       <Flex gap={8} flexWrap="nowrap" overflowX="auto" paddingX={4}>
         <TaskColumn tasks={data || []} />
       </Flex>
-      <Drawer isOpen={isOpen} onClose={onClose}>
+      <Drawer isOpen={isOpen} onClose={onClose} label="Create Task Column">
         <TaskColumnForm
           // eslint-disable-next-line no-alert
           onSubmit={(values) => alert(JSON.stringify(values, null, 2))}

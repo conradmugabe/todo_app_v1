@@ -1,9 +1,10 @@
+import { Button, ButtonGroup, SimpleGrid } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import { TaskColumnInput, TaskColumnInputSchema } from "@tasks/entities";
-import { Button, ButtonGroup, SimpleGrid } from "@chakra-ui/react";
 import Input from "../common/Input";
+import Textarea from "../common/Textarea";
 
 interface TaskColumnFormProps {
   onSubmit: (data: TaskColumnInput) => void;
@@ -27,6 +28,13 @@ export default function TaskColumnForm({ onSubmit }: TaskColumnFormProps) {
           errors={errors}
           label="Name"
           placeholder="Name"
+        />
+        <Textarea
+          register={register}
+          name="description"
+          errors={errors}
+          label="Description"
+          placeholder="Description"
         />
         <Input
           register={register}
