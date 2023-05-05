@@ -22,6 +22,7 @@
       "@forms/*": ["src/UI/forms/*"],
       "@pages/*": ["src/UI/pages/*"],
       "@tasks/*": ["src/app/tasks/*"],
+      "@comments/*": ["src/app/comments/*"],
       "@web/*": ["src/app/web/*"],
       "@utils/*": ["src/app/web/*"]
     }

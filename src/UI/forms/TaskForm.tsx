@@ -3,8 +3,8 @@ import { Button, ButtonGroup, SimpleGrid } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 
 import { TaskInput, TaskInputSchema } from "@tasks/entities";
-import Input from "@components/Input";
-import Textarea from "@components/Textarea";
+import Input from "@ui/components/common/Input";
+import Textarea from "@ui/components/common/Textarea";
 
 type Props = {
   isLoading: boolean;

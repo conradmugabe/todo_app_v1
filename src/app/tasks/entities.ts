@@ -10,3 +10,10 @@ export type TaskInput = z.infer<typeof TaskInputSchema>;
 export const TaskSchema = z.object({ id: z.string() }).merge(TaskInputSchema);
 
 export type Task = z.infer<typeof TaskSchema>;
+
+export const TaskColumnInputSchema = z.object({
+  name: z.string().nonempty(),
+  colorScheme: z.string().nonempty(),
+});
+
+export type TaskColumnInput = z.infer<typeof TaskColumnInputSchema>;
